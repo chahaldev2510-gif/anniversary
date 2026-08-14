@@ -38,49 +38,67 @@
         }
 
 
-        /* Floating hearts */
+        /* ==============================
+           FLOATING HEARTS
+           ============================== */
 
         .heart {
 
             position: fixed;
 
-            color: rgba(255, 255, 255, 0.35);
+            color: rgba(255, 255, 255, 0.4);
 
             font-size: 25px;
 
+            pointer-events: none;
+
             animation: float 6s infinite ease-in-out;
 
-            pointer-events: none;
+            z-index: 1;
         }
 
 
         .heart:nth-child(1) {
+
             left: 10%;
             top: 15%;
+
             animation-delay: 0s;
         }
 
+
         .heart:nth-child(2) {
+
             left: 80%;
             top: 20%;
+
             animation-delay: 1s;
         }
 
+
         .heart:nth-child(3) {
+
             left: 20%;
             top: 75%;
+
             animation-delay: 2s;
         }
 
+
         .heart:nth-child(4) {
+
             left: 85%;
             top: 75%;
+
             animation-delay: 3s;
         }
 
+
         .heart:nth-child(5) {
+
             left: 50%;
             top: 10%;
+
             animation-delay: 4s;
         }
 
@@ -88,24 +106,26 @@
         @keyframes float {
 
             0%, 100% {
+
                 transform: translateY(0);
             }
 
             50% {
+
                 transform: translateY(-20px);
             }
         }
 
 
-        /* ==========================
-           POPUP
-           ========================== */
+        /* ==============================
+           SURPRISE POPUP
+           ============================== */
 
         .popup {
 
             width: 90%;
 
-            max-width: 420px;
+            max-width: 430px;
 
             background: white;
 
@@ -115,14 +135,14 @@
 
             text-align: center;
 
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.2);
-
-            animation: popupIn 0.8s ease;
-
             position: relative;
 
             z-index: 10;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.2);
+
+            animation: popupIn 0.8s ease;
         }
 
 
@@ -164,11 +184,15 @@
         }
 
 
+        /* ==============================
+           OPEN BUTTON
+           ============================== */
+
         .open-button {
 
             margin-top: 20px;
 
-            padding: 14px 30px;
+            padding: 14px 32px;
 
             border: none;
 
@@ -199,9 +223,9 @@
         }
 
 
-        /* ==========================
-           LETTER
-           ========================== */
+        /* ==============================
+           LETTER CONTAINER
+           ============================== */
 
         .letter-container {
 
@@ -221,6 +245,10 @@
         }
 
 
+        /* ==============================
+           LETTER
+           ============================== */
+
         .letter {
 
             background: #fffdf5;
@@ -229,10 +257,10 @@
 
             border-radius: 8px;
 
+            border: 1px solid #f0d9b5;
+
             box-shadow:
                 0 20px 50px rgba(0, 0, 0, 0.25);
-
-            border: 1px solid #f0d9b5;
 
             position: relative;
 
@@ -261,6 +289,8 @@
             }
         }
 
+
+        /* Letter border */
 
         .letter::before {
 
@@ -292,6 +322,10 @@
         }
 
 
+        /* ==============================
+           TITLE
+           ============================== */
+
         .letter h2 {
 
             text-align: center;
@@ -305,6 +339,10 @@
             margin-bottom: 30px;
         }
 
+
+        /* ==============================
+           MESSAGE
+           ============================== */
 
         .letter p {
 
@@ -320,6 +358,67 @@
         }
 
 
+        /* ==============================
+           MUSIC BUTTON
+           ============================== */
+
+        .music-box {
+
+            text-align: center;
+
+            margin: 25px 0 30px;
+        }
+
+
+        .music-button {
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 30px;
+
+            background: #e75480;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 6px 15px rgba(231, 84, 128, 0.3);
+        }
+
+
+        .music-button:hover {
+
+            transform: scale(1.05);
+
+            background: #d94370;
+        }
+
+
+        .music-status {
+
+            margin-top: 10px;
+
+            font-size: 14px !important;
+
+            color: #888 !important;
+
+            text-align: center !important;
+        }
+
+
+        /* ==============================
+           SIGNATURE
+           ============================== */
+
         .signature {
 
             text-align: center !important;
@@ -334,9 +433,9 @@
         }
 
 
-        /* ==========================
+        /* ==============================
            MOBILE
-           ========================== */
+           ============================== */
 
         @media (max-width: 600px) {
 
@@ -371,6 +470,18 @@
                 line-height: 1.7;
             }
 
+
+            .letter::before {
+
+                left: 15px;
+
+                right: 15px;
+
+                top: 15px;
+
+                bottom: 15px;
+            }
+
         }
 
     </style>
@@ -381,7 +492,9 @@
 <body>
 
 
-<!-- Floating hearts -->
+<!-- ==============================
+     FLOATING HEARTS
+     ============================== -->
 
 <div class="heart">❤️</div>
 
@@ -394,28 +507,36 @@
 <div class="heart">❤️</div>
 
 
-<!-- =================================
-     MUSIC
-     ================================= -->
+<!-- ==============================
+     SONG
+     ============================== -->
 
-<audio id="loveSong" loop>
+<audio id="loveSong" preload="auto">
 
-    <source src="tum-se-hi.mp3" type="audio/mpeg">
+    <source
+        src="./tum-se-hi.mp3"
+        type="audio/mpeg">
 
 </audio>
 
 
-<!-- =================================
-     POPUP
-     ================================= -->
+<!-- ==============================
+     FIRST POPUP
+     ============================== -->
 
-<div class="popup" id="popup">
+<div
+    class="popup"
+    id="popup">
 
-    <h1>A Little Surprise 💌</h1>
+    <h1>
+        A Little Surprise 💌
+    </h1>
+
 
     <p>
 
-        I made something special for you.
+        I made something special
+        just for you.
 
         <br>
 
@@ -435,9 +556,9 @@
 </div>
 
 
-<!-- =================================
+<!-- ==============================
      LETTER
-     ================================= -->
+     ============================== -->
 
 <div
     class="letter-container"
@@ -453,22 +574,57 @@
             </h2>
 
 
+            <!-- ======================
+                 MUSIC
+                 ====================== -->
+
+            <div class="music-box">
+
+                <button
+                    class="music-button"
+                    id="musicButton"
+                    onclick="toggleMusic()">
+
+                    ▶️ Play Tum Se Hi
+
+                </button>
+
+
+                <p
+                    class="music-status"
+                    id="musicStatus">
+
+                    A song for you ❤️
+
+                </p>
+
+            </div>
+
+
+            <!-- ======================
+                 MESSAGE
+                 ====================== -->
+
             <p>
 
-                Hey Radhu Ji, it's been 1 year and 10 months —
-                almost 2 years. I never thought that I would
-                actually find love in this world, but I am so
-                glad that I met you that day.
+                Hey Radhu Ji, it's been 1 year
+                and 10 months — almost 2 years.
+                I never thought that I would
+                actually find love in this world,
+                but I am so glad that I met you
+                that day.
 
             </p>
 
 
             <p>
 
-                I really love you a lot, and I genuinely care
-                about you, Radhu Ji. I will always support you
-                in everything, no matter what, my love. I am so
-                grateful to have you in my life, and I feel the
+                I really love you a lot, and I
+                genuinely care about you,
+                Radhu Ji. I will always support
+                you in everything, no matter what,
+                my love. I am so grateful to have
+                you in my life, and I feel the
                 happiest whenever I am with you.
 
             </p>
@@ -476,33 +632,38 @@
 
             <p>
 
-                I know I have made a lot of mistakes in the past,
-                but trust me, I truly love you, and I would never
-                cheat on you in my entire life. Radhu, I am not
-                that kind of a man. I know I have broken your
-                trust, but I swear on my life that I never had
-                any bad intentions, and I never meant to hurt you
-                or do anything wrong intentionally, Bebu.
+                I know I have made a lot of
+                mistakes in the past, but trust me,
+                I truly love you, and I would never
+                cheat on you in my entire life.
+                Radhu, I am not that kind of a man.
+                I know I have broken your trust,
+                but I swear on my life that I never
+                had any bad intentions, and I never
+                meant to hurt you or do anything
+                wrong intentionally, Bebu.
 
             </p>
 
 
             <p>
 
-                Since the day I met you, all I have ever wanted
-                is for you to be the happiest person in the whole
-                world, Radhu Ji.
+                Since the day I met you, all I have
+                ever wanted is for you to be the
+                happiest person in the whole world,
+                Radhu Ji.
 
             </p>
 
 
             <p>
 
-                Thank you for always choosing me and prioritising
-                me over others, Radhu. You make me feel so loved.
-                Nobody has ever loved me the way you love me,
-                Radhu Ji, and you make me feel so special too,
-                Bebu.
+                Thank you for always choosing me
+                and prioritising me over others,
+                Radhu. You make me feel so loved.
+                Nobody has ever loved me the way
+                you love me, Radhu Ji, and you make
+                me feel so special too, Bebu.
 
             </p>
 
@@ -521,7 +682,28 @@
 </div>
 
 
+<!-- ==============================
+     JAVASCRIPT
+     ============================== -->
+
 <script>
+
+
+const song =
+    document.getElementById("loveSong");
+
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+const musicStatus =
+    document.getElementById("musicStatus");
+
+
+// =================================
+// OPEN LETTER
+// =================================
 
 function openLetter() {
 
@@ -537,21 +719,107 @@ function openLetter() {
         "block";
 
 
-    // Start song
+    // Try to start music
 
-    const song =
-        document.getElementById("loveSong");
+    song.volume = 1.0;
 
-    song.play().catch(function(error) {
 
-        console.log(
-            "Audio could not start:",
-            error
-        );
+    song.play()
 
-    });
+        .then(function() {
+
+            musicButton.innerHTML =
+                "⏸️ Pause Tum Se Hi";
+
+            musicStatus.innerHTML =
+                "Now playing: Tum Se Hi ❤️";
+
+        })
+
+        .catch(function(error) {
+
+            console.log(
+                "Autoplay blocked:",
+                error
+            );
+
+            musicStatus.innerHTML =
+                "Tap the button below to play the song 🎵";
+
+        });
 
 }
+
+
+// =================================
+// MUSIC BUTTON
+// =================================
+
+function toggleMusic() {
+
+
+    if (song.paused) {
+
+        song.play()
+
+            .then(function() {
+
+                musicButton.innerHTML =
+                    "⏸️ Pause Tum Se Hi";
+
+                musicStatus.innerHTML =
+                    "Now playing: Tum Se Hi ❤️";
+
+            })
+
+            .catch(function(error) {
+
+                console.log(
+                    "Could not play:",
+                    error
+                );
+
+                musicStatus.innerHTML =
+                    "Please tap the button again 🎵";
+
+            });
+
+    }
+
+    else {
+
+        song.pause();
+
+
+        musicButton.innerHTML =
+            "▶️ Play Tum Se Hi";
+
+
+        musicStatus.innerHTML =
+            "Song paused ❤️";
+
+    }
+
+}
+
+
+// =================================
+// WHEN SONG ENDS
+// =================================
+
+song.addEventListener(
+    "ended",
+    function() {
+
+        musicButton.innerHTML =
+            "▶️ Play Tum Se Hi";
+
+        musicStatus.innerHTML =
+            "Tap to play again ❤️";
+
+    }
+);
+
 
 </script>
 
