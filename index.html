@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Radhu Ji ❤️</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: #ffb6c1;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            overflow: hidden;
+        }
+
+
+        /* =================================
+           HEARTS IN BACKGROUND
+           ================================= */
+
+        .heart {
+
+            position: fixed;
+
+            color: rgba(255, 255, 255, 0.35);
+
+            font-size: 25px;
+
+            animation: float 6s infinite ease-in-out;
+
+            pointer-events: none;
+        }
+
+
+        .heart:nth-child(1) {
+            left: 10%;
+            top: 15%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 80%;
+            top: 20%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(3) {
+            left: 20%;
+            top: 75%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(4) {
+            left: 85%;
+            top: 75%;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(5) {
+            left: 50%;
+            top: 10%;
+            animation-delay: 4s;
+        }
+
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        /* =================================
+           FIRST POPUP
+           ================================= */
+
+        .popup {
+
+            width: 90%;
+
+            max-width: 420px;
+
+            background: white;
+
+            padding: 40px 30px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.2);
+
+            animation: popupIn 0.8s ease;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        @keyframes popupIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: scale(0.7);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1);
+            }
+        }
+
+
+        .popup h1 {
+
+            color: #e75480;
+
+            margin-top: 0;
+
+            font-size: 30px;
+        }
+
+
+        .popup p {
+
+            color: #555;
+
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+
+        .open-button {
+
+            margin-top: 20px;
+
+            padding: 14px 30px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #e75480;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 20px rgba(231, 84, 128, 0.35);
+        }
+
+
+        .open-button:hover {
+
+            transform: scale(1.08);
+
+            background: #d94370;
+        }
+
+
+        /* =================================
+           LETTER
+           ================================= */
+
+        .letter-container {
+
+            display: none;
+
+            width: 90%;
+
+            max-width: 650px;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        .letter {
+
+            background: #fffdf5;
+
+            padding: 45px 40px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+
+            border: 1px solid #f0d9b5;
+
+            position: relative;
+
+            animation: letterOpen 1.2s ease;
+        }
+
+
+        @keyframes letterOpen {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.2)
+                    rotateX(70deg);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    rotateX(0);
+            }
+        }
+
+
+        /* Letter lines */
+
+        .letter::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 25px;
+
+            right: 25px;
+
+            top: 25px;
+
+            bottom: 25px;
+
+            border: 1px solid #f0c9c9;
+
+            pointer-events: none;
+        }
+
+
+        .letter-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 10px;
+        }
+
+
+        .letter h2 {
+
+            text-align: center;
+
+            color: #d94f70;
+
+            font-size: 32px;
+
+            margin-top: 0;
+
+            margin-bottom: 30px;
+        }
+
+
+        .letter p {
+
+            color: #4a4a4a;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            text-align: center;
+
+            margin: 15px 0;
+        }
+
+
+        .signature {
+
+            margin-top: 30px !important;
+
+            color: #d94f70 !important;
+
+            font-size: 22px !important;
+
+            font-weight: bold;
+        }
+
+
+        /* =================================
+           MOBILE
+           ================================= */
+
+        @media (max-width: 600px) {
+
+            .popup {
+
+                padding: 30px 20px;
+            }
+
+
+            .popup h1 {
+
+                font-size: 26px;
+            }
+
+
+            .letter {
+
+                padding: 35px 25px;
+            }
+
+
+            .letter h2 {
+
+                font-size: 25px;
+            }
+
+
+            .letter p {
+
+                font-size: 17px;
+
+                line-height: 1.7;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     FLOATING HEARTS
+     ================================= -->
+
+<div class="heart">❤️</div>
+
+<div class="heart">♡</div>
+
+<div class="heart">❤️</div>
+
+<div class="heart">♡</div>
+
+<div class="heart">❤️</div>
+
+
+<!-- =================================
+     FIRST POPUP
+     ================================= -->
+
+<div class="popup" id="popup">
+
+    <h1>A Little Surprise 💌</h1>
+
+    <p>
+        I made something special for you.
+        <br>
+        Open it when you're ready ❤️
+    </p>
+
+    <button
+        class="open-button"
+        onclick="openLetter()">
+
+        Open It ❤️
+
+    </button>
+
+</div>
+
+
+<!-- =================================
+     LETTER
+     ================================= -->
+
+<div
+    class="letter-container"
+    id="letterContainer">
+
+    <div class="letter">
+
+        <div class="letter-content">
+
+            <h2>
+                Happy Anniversary Radhu Ji ❤️
+            </h2>
+
+
+            <p>
+                I really love you a lot,
+                and I am really grateful
+                for having you in my life.
+            </p>
+
+
+            <p>
+                You make my life happier
+                just by being in it.
+            </p>
+
+
+            <p>
+                I'm truly lucky to have you,
+                and I hope we keep making
+                beautiful memories together.
+            </p>
+
+
+            <p class="signature">
+
+                With all my love ❤️
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openLetter() {
+
+    // Hide popup
+
+    document.getElementById("popup").style.display =
+        "none";
+
+
+    // Show letter
+
+    document.getElementById("letterContainer").style.display =
+        "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
