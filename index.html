@@ -38,9 +38,7 @@
         }
 
 
-        /* =================================
-           HEARTS IN BACKGROUND
-           ================================= */
+        /* Floating hearts */
 
         .heart {
 
@@ -99,9 +97,9 @@
         }
 
 
-        /* =================================
-           FIRST POPUP
-           ================================= */
+        /* ==========================
+           POPUP
+           ========================== */
 
         .popup {
 
@@ -201,17 +199,21 @@
         }
 
 
-        /* =================================
+        /* ==========================
            LETTER
-           ================================= */
+           ========================== */
 
         .letter-container {
 
             display: none;
 
-            width: 90%;
+            width: 92%;
 
-            max-width: 650px;
+            max-width: 700px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
 
             position: relative;
 
@@ -259,8 +261,6 @@
             }
         }
 
-
-        /* Letter lines */
 
         .letter::before {
 
@@ -310,31 +310,33 @@
 
             color: #4a4a4a;
 
-            font-size: 20px;
+            font-size: 19px;
 
             line-height: 1.8;
 
-            text-align: center;
+            text-align: left;
 
-            margin: 15px 0;
+            margin: 18px 0;
         }
 
 
         .signature {
 
+            text-align: center !important;
+
             margin-top: 30px !important;
 
             color: #d94f70 !important;
 
-            font-size: 22px !important;
+            font-size: 24px !important;
 
             font-weight: bold;
         }
 
 
-        /* =================================
+        /* ==========================
            MOBILE
-           ================================= */
+           ========================== */
 
         @media (max-width: 600px) {
 
@@ -379,23 +381,32 @@
 <body>
 
 
+<!-- Floating hearts -->
+
+<div class="heart">❤️</div>
+
+<div class="heart">♡</div>
+
+<div class="heart">❤️</div>
+
+<div class="heart">♡</div>
+
+<div class="heart">❤️</div>
+
+
 <!-- =================================
-     FLOATING HEARTS
+     MUSIC
      ================================= -->
 
-<div class="heart">❤️</div>
+<audio id="loveSong" loop>
 
-<div class="heart">♡</div>
+    <source src="tum-se-hi.mp3" type="audio/mpeg">
 
-<div class="heart">❤️</div>
-
-<div class="heart">♡</div>
-
-<div class="heart">❤️</div>
+</audio>
 
 
 <!-- =================================
-     FIRST POPUP
+     POPUP
      ================================= -->
 
 <div class="popup" id="popup">
@@ -403,10 +414,15 @@
     <h1>A Little Surprise 💌</h1>
 
     <p>
+
         I made something special for you.
+
         <br>
+
         Open it when you're ready ❤️
+
     </p>
+
 
     <button
         class="open-button"
@@ -431,36 +447,72 @@
 
         <div class="letter-content">
 
+
             <h2>
                 Happy Anniversary Radhu Ji ❤️
             </h2>
 
 
             <p>
-                I really love you a lot,
-                and I am really grateful
-                for having you in my life.
+
+                Hey Radhu Ji, it's been 1 year and 10 months —
+                almost 2 years. I never thought that I would
+                actually find love in this world, but I am so
+                glad that I met you that day.
+
             </p>
 
 
             <p>
-                You make my life happier
-                just by being in it.
+
+                I really love you a lot, and I genuinely care
+                about you, Radhu Ji. I will always support you
+                in everything, no matter what, my love. I am so
+                grateful to have you in my life, and I feel the
+                happiest whenever I am with you.
+
             </p>
 
 
             <p>
-                I'm truly lucky to have you,
-                and I hope we keep making
-                beautiful memories together.
+
+                I know I have made a lot of mistakes in the past,
+                but trust me, I truly love you, and I would never
+                cheat on you in my entire life. Radhu, I am not
+                that kind of a man. I know I have broken your
+                trust, but I swear on my life that I never had
+                any bad intentions, and I never meant to hurt you
+                or do anything wrong intentionally, Bebu.
+
+            </p>
+
+
+            <p>
+
+                Since the day I met you, all I have ever wanted
+                is for you to be the happiest person in the whole
+                world, Radhu Ji.
+
+            </p>
+
+
+            <p>
+
+                Thank you for always choosing me and prioritising
+                me over others, Radhu. You make me feel so loved.
+                Nobody has ever loved me the way you love me,
+                Radhu Ji, and you make me feel so special too,
+                Bebu.
+
             </p>
 
 
             <p class="signature">
 
-                With all my love ❤️
+                I love you, Radhu. ❤️
 
             </p>
+
 
         </div>
 
@@ -483,6 +535,21 @@ function openLetter() {
 
     document.getElementById("letterContainer").style.display =
         "block";
+
+
+    // Start song
+
+    const song =
+        document.getElementById("loveSong");
+
+    song.play().catch(function(error) {
+
+        console.log(
+            "Audio could not start:",
+            error
+        );
+
+    });
 
 }
 
